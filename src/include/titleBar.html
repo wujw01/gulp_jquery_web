@@ -1,0 +1,26 @@
+
+
+<div id="titleBar">
+    <div class="container">
+        <div class="content"></div>
+        <div class="left"><<<</div>
+        <div class="title"></div>
+        <div class="right" style="display: none">分享图标</div>
+    </div>
+</div>
+
+<script>
+$(function () {
+    $('#titleBar .left').click(function () {
+        window.history.go(-1)
+    })
+    if (router.activePage && router.activePage.name ){
+        $('#titleBar .title').html(router.activePage.name)
+        document.title = router.activePage.name
+        if (router.activePage.share){
+            $('#titleBar .right').show()
+        }
+    }
+
+})
+</script>
